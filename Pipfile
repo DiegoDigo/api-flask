@@ -11,6 +11,7 @@ flask-sqlalchemy = "==2.3.2"
 flask-migrate = "*"
 flask-bcrypt = "*"
 psycopg2 = "==2.7.4"
+pyjwt = "*"
 
 [requires]
 python_version = "3.6"
