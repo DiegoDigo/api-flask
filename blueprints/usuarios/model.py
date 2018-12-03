@@ -29,4 +29,4 @@ class User(db.Model):
 
     @staticmethod
     def find_all():
-        return str([str(a.nome) for a in User.query.order_by(User.nome).all()])
+        return User.query.order_by(User.email).all()
