@@ -5,6 +5,7 @@ from ext.db import db
 
 
 class User(db.Model):
+
     __tablename__ = "user"
 
     id = db.Column(db.String, primary_key=True, default=uuid.uuid4())
@@ -30,3 +31,7 @@ class User(db.Model):
     @staticmethod
     def find_all():
         return User.query.order_by(User.email).all()
+
+    @staticmethod
+    def find_by_email(email: str):
+        return User.query.filter_by(email=email).first()

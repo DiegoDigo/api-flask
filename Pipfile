@@ -8,9 +8,9 @@ verify_ssl = true
 [packages]
 flask = "*"
 flask-sqlalchemy = "==2.3.2"
-psycopg2 = "*"
 flask-migrate = "*"
 flask-bcrypt = "*"
+psycopg2 = "==2.7.4"
 
 [requires]
 python_version = "3.6"

@@ -1,6 +1,8 @@
 import settings
 
 from flask import Flask
+
+from blueprints.usuarios.model import User
 from blueprints.usuarios.rotas import init_app as route_user
 from ext.bcrypt_password import bcrypt
 from ext.migrate import migrate
