@@ -16,5 +16,5 @@ def create_user_default() -> tuple:
 def login(user_data: dict) -> tuple:
     user = User.find_by_email(user_data.get('email', None))
     if user and user.password_is_valid(user_data.get('password', None)):
-        return jsonify(token=encode_auth_token(user.username).decode("UTF-8")), 200
+        return jsonify(token=encode_auth_token(user).decode("UTF-8")), 200
     return jsonify(message="user or password not exist"), 403

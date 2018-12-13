@@ -1,13 +1,16 @@
 import jwt
 import datetime
 
+from blueprints.usuarios.model import User
 
-def encode_auth_token(user_name: str) -> str:
+
+def encode_auth_token(user: User) -> str:
     try:
         payload = {
             'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=30),
             'iat': datetime.datetime.utcnow(),
-            'sub': user_name
+            'sub': user.username,
+            'roles': [user.email]
         }
         return jwt.encode(
             payload,
